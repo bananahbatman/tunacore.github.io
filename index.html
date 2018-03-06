@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <head>
     <title>Troy High School Virtual Campus Tour</title>
     <style type="text/css">
@@ -7,10 +8,14 @@
 			height: 100%;
 			width: 100%;
 			margin: 0;
-			overflow: hidden;
 		}
 		div {
 			margin: 0;
+		}
+		@media (min-width: 320px) and (max-width: 480px) {
+			#wrapper {
+				width: 100%;
+			}
 		}
 		.showcase {
 			position: relative;
@@ -22,6 +27,17 @@
 			margin-top: 13px;
 			margin-left: 20px;
 			opacity: 0.5;
+		}
+		.site_num{
+			width: 30px;
+			height: 30px;
+			position: relative;
+			float: left;
+			background-color: rgb(138, 8, 8);
+			margin-right:-30px;
+			font-weight: bold;
+			font-size: 24px;
+			color: white;
 		}
 		#header {
 			position: absolute;
@@ -102,7 +118,7 @@
 			margin-left: 105px;
 		}
 		#last {
-			padding-right: 2%;
+			margin-right: 20px;
 		}
     </style>
   </head>
@@ -135,24 +151,31 @@
       <!-- Bottom tour navigation -->
       <div id="navi">
         <div class="preview">
+          <div class="site_num" style="text-align:center">1</div>
           <img src="images/site_preview/site_1.jpg" onclick="currentSlide(1)"/>
 	    </div>
         <div class="preview">
+          <div class="site_num" style="text-align:center">2</div>
           <img src="images/site_preview/site_2.jpg" onclick="currentSlide(2)"/>
 	    </div>
 	    <div class="preview">
+          <div class="site_num" style="text-align:center">3</div>
           <img src="images/site_preview/site_3.jpg" onclick="currentSlide(3)"/>
 	    </div>
 	    <div class="preview">
+          <div class="site_num" style="text-align:center">4</div>
           <img src="images/site_preview/site_4.jpg" onclick="currentSlide(4)"/>
 	    </div>
 	    <div class="preview">
+          <div class="site_num" style="text-align:center">5</div>
           <img src="images/site_preview/site_5.jpg" onclick="currentSlide(5)"/>
 	    </div>
 	    <div class="preview">
+          <div class="site_num" style="text-align:center">6</div>
           <img src="images/site_preview/site_6.jpg" onclick="currentSlide(6)"/>
 	    </div>
 	    <div class="preview" id="last">
+          <div class="site_num" style="text-align:center">7</div>
           <img src="images/site_preview/site_7.jpg" onclick="currentSlide(7)"/>
 	    </div>
       </div>
