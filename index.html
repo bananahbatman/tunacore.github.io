@@ -12,15 +12,111 @@
 		div {
 			margin: 0;
 		}
+		h1 {
+			color: white;
+		}
+		p {
+			color: white;
+		}
 		@media (min-width: 320px) and (max-width: 480px) {
+			#header {
+				width: 100%;
+				height: 5.55556%;
+				background-color: rgb(138, 8, 8);
+			}
 			#wrapper {
 				width: 100%;
 			}
 		}
+		#header {
+			position: absolute;
+			width: 100%;
+			height: 5.55556%;
+			background-color: rgb(138, 8, 8);
+			float: left;
+		}
+		#wrapper {
+			width: 1280px;
+			height: 800px;
+			margin: auto;
+		}
+		/*Blurb box*/
+		.site_titles {
+			width: 100%;
+			text-align: center;
+			display: none;
+		}
+		.blurbs {
+			position: relative;
+			width: 165px;
+			left: 20px;
+			display: none;
+		}
+		#blurb_container {
+			width: 205px;
+			height: 505px;
+			float: left;
+			position: relative;
+			background-color: rgb(29, 29, 29);
+			margin-top: 80px;
+			margin-left: 105px; 
+		}
+		/*Tour and site pictures*/
 		.showcase {
 			position: relative;
 			display: none;
 		}
+		#tour_container {
+			width: 850px;
+			height: 505px;
+			float: left;
+			position: relative;
+			overflow: hidden;
+			background-color: rgb(238, 202, 202);
+			margin-top: 80px;
+			margin-left: 10px;
+		}
+		#prev, #next {
+			position: relative;
+			cursor: pointer;
+			font-weight: bold;
+			font-size: 24px;
+			color: white;
+			top: -480px;
+			z-index: 2;
+		}
+		#prev {
+			float: left;
+			left: 2.34375%;
+		}
+		#next {
+			float: right;
+			right: 2.34375%;
+		}
+		#map_container {
+			position: relative;
+			width: 350px;
+			height: 200px;
+			background-color: rgb(29, 29, 29);
+			float: right;
+			top: -425px;
+			z-index: 2;
+		}
+		#bt_container {
+			position: relative;
+			width: 60px;
+			height: 30px;
+			background-color: rgb(29, 29, 29);
+			top: -30px;
+		}	
+		#vis_bt {
+			position: relative;
+			cursor: pointer;
+			font-weight: bold;
+			font-size: 24px;
+			color: white;
+		}
+		/*Bottom tour navigation*/
 		.preview {
 			display: inline-block;
 			position: relative;
@@ -38,73 +134,6 @@
 			font-weight: bold;
 			font-size: 24px;
 			color: white;
-		}
-		#header {
-			position: absolute;
-			width: 100%;
-			height: 5.55556%;
-			background-color: rgb(138, 8, 8);
-			float: left;
-		}
-		#wrapper {
-			width: 1280px;
-			height: 800px;
-			margin: auto;
-		}
-		#map_container {
-			width: 205px;
-			height: 505px;
-			float: left;
-			position: relative;
-			background-color: rgb(29, 29, 29);
-			margin-top: 80px;
-			margin-left: 105px; 
-		}
-		#tour_container {
-			width: 850px;
-			height: 505px;
-			float: left;
-			position: relative;
-			overflow: hidden;
-			background-color: rgb(238, 202, 202);
-			margin-top: 80px;
-			margin-left: 10px;
-		}
-		#blurb_container {
-			width: 550px;
-			height: 230px;
-			position: relative;
-			float: right;
-			z-index: 2;
-		}
-		#bt_container {
-			width: 80px;
-			height: 30px;
-			background-color: rgb(238, 202, 202);
-		}
-		#vis_bt {
-			position: relative;
-			cursor: pointer;
-			font-weight: bold;
-			font-size: 24px;
-			color: white;
-		}
-		#prev, #next {
-			position: relative;
-			cursor: pointer;
-			font-weight: bold;
-			font-size: 24px;
-			color: white;
-			margin-top: -480px;
-			z-index: 2;
-		}
-		#prev {
-			float: left;
-			left: 2.34375%;
-		}
-		#next {
-			float: right;
-			right: 2.34375%;
 		}
 		#navi {
 			width: 1065px;
@@ -127,9 +156,22 @@
     <div id="header">
     </div>
     <div id="wrapper">
-      <!-- Campus map-->
-      <div id="map_container">
-      
+      <!-- Blurb box -->
+      <div id="blurb_container">
+        <h1 class="site_titles">Quad</h1>
+        <h1 class="site_titles">200 Building</h1>
+        <h1 class="site_titles">300 Building</h1>
+        <h1 class="site_titles">400 Building</h1>
+        <h1 class="site_titles">500 Building</h1>
+        <h1 class="site_titles">900 Building</h1>
+        <h1 class="site_titles">1000 Building</h1>
+        <p class="blurbs">The Quad is a central area for students to make their way to their classes every day. Additionally, many school events and club fundraisers are held here because it is spacious and easily accessible.</p>
+        <p class="blurbs">The 200 Building is mostly known for its Library. Here, students can study in silence and borrow from a wide array of books. The library also has many computers as well as a few printers for students to use. However,  the 200 Building also includes the Lecture hall and one English classroom.</p>
+        <p class="blurbs">The 300 Building mainly contains Math, English, and Foreign Language classrooms. This is the largest building on Troy’s campus with 3 long parallel hallways intersected with another perpendicular hallway leading to the back of the school.</p>
+        <p class="blurbs">The 400 Building is the main hub for elective and tech courses offered at Troy. Here, students are often seen participating in programs such as ROTC, Band, Choir, and Art. Additionally, AP Computer Science Principles, AP Computer Science A, and Computer Science IBSL are taught here.</p>
+        <p class="blurbs">The 500 Building is the history building at Troy. In this building, students take classes such as World History, European History, American History. There is a variety of furniture placed in the extremely spacious hallways for students to relax in before classes. Also, many student artworks are hung up on the walls of the hallways for students to enjoy.</p>
+        <p class="blurbs">The 900 Building is all about science. In this building, students can learn about Biology, Chemistry, Physics, Anatomy, and more. This building is located somewhat far away from the other buildings, and students usually take the Breezeway from the Quad to get there. This is also where Troy’s renowned Science Olympiad team practices after school.</p>
+        <p class="blurbs">The 1000 Buildings are usually viewed as extra classrooms used by Cyber Security and Business classes. One of the buildings has two powerful computer labs, which is where Troy’s Cyber Security team practices.</p>
       </div>
       <!-- Tour and site pictures -->
       <div id="tour_container">
@@ -142,7 +184,7 @@
 	    <img class="showcase" src="images/site_main/site_7.jpg"/>
 	    <a id="prev" onclick="plusSlides(-1)">&#10094;</a>
 	    <a id="next" onclick="plusSlides(1)">&#10095;</a>
-	    <div id="blurb_container">
+	    <div id="map_container">
      	  <div id="bt_container" style="text-align:center">
       	    <a id="vis_bt" onclick="toggleVis()">-</a>
 		  </div>
@@ -183,27 +225,63 @@
     <!-- Tour mechanism -->
     <script>
 		var slideIndex = 1;
+		var visible = false;
 		showSlides(slideIndex);
+		/**
+		 * Goes forward or backward one slide.
+		 * 
+		 * @param n  + or - 1 indicating forward or backward motion.
+		 */
 		function plusSlides(n) {
 			showSlides(slideIndex += n);
 		}
+		/**
+		 * Switches slide according to specified slide number.
+		 * 
+		 * @param n  slide number
+		 */
 		function currentSlide(n) {
 			showSlides(slideIndex = n);
 		}
+		/**
+		 * Toggles visibility of slides according to current
+		 * slide number.
+		 * 
+		 * @param n  slide index
+		 */
 		function showSlides(n) {
 			var i;
+			var NUMSLIDES = 7;
 			var slides = document.getElementsByClassName("showcase");
 			var previews = document.getElementsByClassName("preview");
+			var blurbs = document.getElementsByClassName("blurbs");
+			var titles = document.getElementsByClassName("site_titles");
 			if (n > slides.length) {slideIndex = 1}
 			if (n < 1) {slideIndex = slides.length}
-			for(i = 0; i < slides.length; i++) {
+			for(i = 0; i < NUMSLIDES; i++) {
 				slides[i].style.display = "none";
-			}
-			for(i = 0; i < previews.length; i++) {
+				blurbs[i].style.display = "none";
+				titles[i].style.display = "none";
 				previews[i].style.opacity = "0.5";
 			}
 			slides[slideIndex-1].style.display = "block";
+			titles[slideIndex-1].style.display = "block";
+			blurbs[slideIndex-1].style.display = "block";
 			previews[slideIndex-1].style.opacity = "1.0";
+		}
+		/**
+		 * Toggles visibility of map.
+		 */
+		function toggleVis() {
+			if(visible) {
+				document.getElementById("map_container").style.height = "200px";
+				document.getElementById("map_container").style.top = "-425px";
+			}
+			else {
+				document.getElementById("map_container").style.height = "0px";
+				document.getElementById("map_container").style.top = "-225px";
+			}
+			visible = !visible;
 		}
 	</script>
   </body>
