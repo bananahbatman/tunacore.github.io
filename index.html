@@ -17,6 +17,7 @@
 		}
 		p {
 			color: white;
+			margin: 0px;
 		}
 		@media (min-width: 320px) and (max-width: 480px) {
 			#header {
@@ -28,12 +29,34 @@
 				width: 100%;
 			}
 		}
+		.bt {
+			position: relative;
+			cursor: pointer;
+			font-weight: bold;
+			font-size: 24px;
+			color: white;
+		}
 		#header {
 			position: absolute;
 			width: 100%;
 			height: 5.55556%;
 			background-color: rgb(138, 8, 8);
 			float: left;
+		}
+		#lightbox {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.8);
+			z-index: 3;
+		}
+		#close {
+			float: right;
+			top: 50px;
+			right: 50px;
 		}
 		#wrapper {
 			width: 1280px;
@@ -52,6 +75,20 @@
 			left: 20px;
 			display: none;
 		}
+		.info_container {
+			width: 175px;
+			height: 50px;
+			margin-left: 15px;
+			margin-bottom: 10px;
+			margin-top: 10px;
+			text-align: center;
+			background-color: rgb(138, 8, 8);
+			display: none;
+		}
+		.info {
+			font-weight: normal;
+			font-size: 18px;
+		}
 		#blurb_container {
 			width: 205px;
 			height: 505px;
@@ -66,6 +103,15 @@
 			position: relative;
 			display: none;
 		}
+		.expand {
+			position: relative;
+			width: 30px;
+			height: 30px;
+			float: right;
+			right: 10px;
+			top: 10px;
+			background-color: rgb(29, 29, 29);
+		}
 		#tour_container {
 			width: 850px;
 			height: 505px;
@@ -77,11 +123,6 @@
 			margin-left: 10px;
 		}
 		#prev, #next {
-			position: relative;
-			cursor: pointer;
-			font-weight: bold;
-			font-size: 24px;
-			color: white;
 			top: -480px;
 			z-index: 2;
 		}
@@ -102,19 +143,15 @@
 			top: -425px;
 			z-index: 2;
 		}
-		#bt_container {
+		#visibility_container {
 			position: relative;
 			width: 60px;
 			height: 30px;
 			background-color: rgb(29, 29, 29);
 			top: -30px;
 		}	
-		#vis_bt {
-			position: relative;
-			cursor: pointer;
-			font-weight: bold;
-			font-size: 24px;
-			color: white;
+		#expand_container {
+			text-align: center;
 		}
 		/*Bottom tour navigation*/
 		.preview {
@@ -152,6 +189,10 @@
     </style>
   </head>
   <body scroll="no">
+    <!-- Lightbox -->
+    <div id="lightbox">
+      <p id="close" class="bt" onclick="toggleLightbox()">X</p>
+    </div>
     <!-- Header -->
     <div id="header">
     </div>
@@ -167,11 +208,35 @@
         <h1 class="site_titles">1000 Building</h1>
         <p class="blurbs">The Quad is a central area for students to make their way to their classes every day. Additionally, many school events and club fundraisers are held here because it is spacious and easily accessible.</p>
         <p class="blurbs">The 200 Building is mostly known for its Library. Here, students can study in silence and borrow from a wide array of books. The library also has many computers as well as a few printers for students to use. However,  the 200 Building also includes the Lecture hall and one English classroom.</p>
+        <div class="info_container">
+          <p class="info bt">View Mrs. Hufferd's Classroom</p>
+		</div>
         <p class="blurbs">The 300 Building mainly contains Math, English, and Foreign Language classrooms. This is the largest building on Troy’s campus with 3 long parallel hallways intersected with another perpendicular hallway leading to the back of the school.</p>
+        <div class="info_container">
+          <p class="info bt">View Mr. Rogers's Classroom</p>
+		</div>
+        <div class="info_container">
+          <p class="info bt">View Mrs. Milord's Classroom</p>
+		</div>
+        <div class="info_container">
+          <p class="info bt">View Mrs. Romero's Classroom</p>
+		</div>
         <p class="blurbs">The 400 Building is the main hub for elective and tech courses offered at Troy. Here, students are often seen participating in programs such as ROTC, Band, Choir, and Art. Additionally, AP Computer Science Principles, AP Computer Science A, and Computer Science IBSL are taught here.</p>
         <p class="blurbs">The 500 Building is the history building at Troy. In this building, students take classes such as World History, European History, American History. There is a variety of furniture placed in the extremely spacious hallways for students to relax in before classes. Also, many student artworks are hung up on the walls of the hallways for students to enjoy.</p>
-        <p class="blurbs">The 900 Building is all about science. In this building, students can learn about Biology, Chemistry, Physics, Anatomy, and more. This building is located somewhat far away from the other buildings, and students usually take the Breezeway from the Quad to get there. This is also where Troy’s renowned Science Olympiad team practices after school.</p>
+        <div class="info_container">
+          <p class="info bt">View Mr. Shirota's Classroom</p>
+		</div>
+        <p class="blurbs">The 900 Building is all about science. In this building, students can learn subjects such as Biology, Chemistry, Physics, Anatomy, and more. This building is usually accessed through the breezeway, which is located between the 400 and 500 buildings. This is also where Troy’s renowned Science Olympiad team practices after school.</p>
+        <div class="info_container">
+          <p class="info bt">View Mrs. Ngo's Classroom</p>
+		</div>
+        <div class="info_container">
+          <p class="info bt">View Mr. Gower's Classroom</p>
+		</div>
         <p class="blurbs">The 1000 Buildings are usually viewed as extra classrooms used by Cyber Security and Business classes. One of the buildings has two powerful computer labs, which is where Troy’s Cyber Security team practices.</p>
+        <div class="info_container">
+          <p class="info bt">View Mr. Stubblefield's Classroom</p>
+		</div>
       </div>
       <!-- Tour and site pictures -->
       <div id="tour_container">
@@ -182,11 +247,14 @@
 	    <img class="showcase" src="images/site_main/site_5.jpg"/>
 	    <img class="showcase" src="images/site_main/site_6.jpg"/>
 	    <img class="showcase" src="images/site_main/site_7.jpg"/>
-	    <a id="prev" onclick="plusSlides(-1)">&#10094;</a>
-	    <a id="next" onclick="plusSlides(1)">&#10095;</a>
+	    <p id="prev" class="bt" onclick="plusSlides(-1)">&#10094;</p>
+	    <p id="next" class="bt" onclick="plusSlides(1)">&#10095;</p>
 	    <div id="map_container">
-     	  <div id="bt_container" style="text-align:center">
-      	    <a id="vis_bt" onclick="toggleVis()">-</a>
+	      <div id="expand_container" class="expand">
+	        <p class="bt" onclick="toggleMapExpand();toggleLightbox();">+</p>
+	      </div>         
+     	  <div id="visibility_container" style="text-align:center">
+      	    <p id="vis" class="bt" onclick="toggleVis()">-</p>
 		  </div>
         </div>
       </div>
@@ -225,7 +293,8 @@
     <!-- Tour mechanism -->
     <script>
 		var slideIndex = 1;
-		var visible = false;
+		var mapVisible = false;
+		var lightboxVisible = false;
 		showSlides(slideIndex);
 		/**
 		 * Goes forward or backward one slide.
@@ -251,13 +320,37 @@
 		 */
 		function showSlides(n) {
 			var i;
+			var j;
 			var NUMSLIDES = 7;
+			var NUMINFO = 8;
 			var slides = document.getElementsByClassName("showcase");
 			var previews = document.getElementsByClassName("preview");
 			var blurbs = document.getElementsByClassName("blurbs");
 			var titles = document.getElementsByClassName("site_titles");
+			var info = document.getElementsByClassName("info_container");
 			if (n > slides.length) {slideIndex = 1}
 			if (n < 1) {slideIndex = slides.length}
+			for(j = 0; j < NUMINFO; j++){
+				info[j].style.display = "none";
+			}
+			if (slideIndex === 2) {
+				info[0].style.display = "block";
+			}
+			if (slideIndex === 3) {
+				info[1].style.display = "block";
+				info[2].style.display = "block";
+				info[3].style.display = "block";
+			}
+			if (slideIndex === 5) {
+				info[4].style.display = "block";
+			}
+			if (slideIndex === 6) {
+				info[5].style.display = "block";
+				info[6].style.display = "block";
+			}
+			if (slideIndex === 7) {
+				info[7].style.display = "block";
+			}
 			for(i = 0; i < NUMSLIDES; i++) {
 				slides[i].style.display = "none";
 				blurbs[i].style.display = "none";
@@ -273,7 +366,7 @@
 		 * Toggles visibility of map.
 		 */
 		function toggleVis() {
-			if(visible) {
+			if(mapVisible) {
 				document.getElementById("map_container").style.height = "200px";
 				document.getElementById("map_container").style.top = "-425px";
 			}
@@ -281,7 +374,19 @@
 				document.getElementById("map_container").style.height = "0px";
 				document.getElementById("map_container").style.top = "-225px";
 			}
-			visible = !visible;
+			mapVisible = !mapVisible;
+		}
+		function toggleLightbox() {
+			if(lightboxVisible) {
+				document.getElementById("lightbox").style.display = "none";
+			}
+			else {
+				document.getElementById("lightbox").style.display = "block";
+			}
+			lightboxVisible = !lightboxVisible;
+		}
+		function toggleMapExpand() {
+			
 		}
 	</script>
   </body>
