@@ -46,11 +46,22 @@
 			width: 1280px;
 			height: 720px;
 			margin-left: 16.6667%;
-			margin-top: 100px;
+			margin-top: 75px;
 			z-index: 4;
 		}
 		.classrooms {
 			display: none;
+		}
+		.cblurbs_container {
+			display: none;
+			width: 1280px;
+			height 100px;
+			background-color: rgb(29, 29, 29);
+		}
+		.classroom_blurbs {
+			width: 1220px;
+			margin: auto;
+			padding: 10px;
 		}
 		/* Lightbox */
 		#lightbox {
@@ -223,13 +234,37 @@
     <!-- Classrooms -->
     <div id="classroom_container">
       <img class="classrooms" src="images/classrooms/hufferd.jpg"/>
+      <div class ="cblurbs_container">
+        <p class ="classroom_blurbs">Mrs. Hufferd has been a teacher for the last 24 years, and has a Masters in Modern American Literature. She is currently teaching English I Honors. She expects students to be engaged and curious and hopes to create a love for writing within her students. She is also the advisor of the well established peer tutoring club. In addition, Mrs. Hufferd is a great lover of art and nature and enjoys spending her time gardening and reading.</p>
+      </div>
       <img class="classrooms" src="images/classrooms/rogers.jpg"/>
+      <div class ="cblurbs_container">
+        <p class ="classroom_blurbs">With a Bachelors of Science and a Masters in Mathematics, Mr. Rogers has been enthusiastically teaching Algebra II Honors at Troy for the last 18 years. He holds high expectations of the students at Troy and strives to imbue his students with all the knowledge they would need. Mr. Rogers spends his free time with sports, camping, and family.</p>
+      </div>
       <img class="classrooms" src="images/classrooms/milord.jpg"/>
+      <div class ="cblurbs_container">
+        <p class ="classroom_blurbs">For 15 years, Mrs. Milord has been zealously teaching Geometry Honors and higher level math for the last 15 years. As a teacher to incoming freshmen, Mrs. Milord strives to build a sturdy foundation for math that students use over their time at Troy. During her free time, Mrs. Milord unwinds by reading books and gardening.</p>
+      </div>
       <img class="classrooms" src="images/classrooms/romero.jpg"/>
+      <div class ="cblurbs_container">
+        <p class ="classroom_blurbs">With a Masters in Education, Mrs. Romero has been teaching Spanish at Troy for 13 years. Mrs. Romero expects students to be positive, assertive, open to new concepts, and able to follow instructions. Mrs. Romero spends her free time teaching yoga, helping the homeless, and cleaning beaches.</p>
+      </div>
       <img class="classrooms" src="images/classrooms/shirota.jpg"/>
+      <div class ="cblurbs_container">
+        <p class ="classroom_blurbs">Mrs. Hufferd has been a teacher for the last 24 years, and has a Masters in Modern American Literature. She is currently teaching English I Honors. She expects students to be engaged and curious and hopes to create a love for writing within her students. She is also the advisor of the well established peer tutoring club. In addition, Mrs. Hufferd is a great lover of art and nature and enjoys spending her time gardening and reading.</p>
+      </div>
       <img class="classrooms" src="images/classrooms/ngo.jpg"/>
+      <div class ="cblurbs_container">
+        <p class ="classroom_blurbs">Before coming to Troy, Mrs. Ngo taught for five years at Brea High School. Ever since, she has been teaching Biology Honors for the past 10 years. Mrs. Ngo strives to develop her student’s problem solving abilities and hopes to have them take in good study habits and attitudes. Mrs. Ngo is one of the most loved teachers at Troy for her sense of humor and engaging class.</p>
+      </div>
       <img class="classrooms" src="images/classrooms/gower.jpg"/>
-      <img class="classrooms" src="images/classrooms/stubblefield.jpg"/>	
+      <div class ="cblurbs_container">
+        <p class ="classroom_blurbs">Mr. Gower is well educated with a Masters in Science Education, a Minor in Chemistry, and a Bachelors in Theology. Before teaching a Troy, Mr. Gower worked as a surgeon. However. as a Chemistry  teacher, Mr. Gower expects students to have a desire and put in the effort to mastering the subject. He hopes that all students would come in to learn with integrity and hard work. Mr. Gower spends his time relaxing with his family, watching sports, and going to church. </p>
+      </div>
+      <img class="classrooms" src="images/classrooms/stubblefield.jpg"/>
+      <div class ="cblurbs_container">
+        <p class ="classroom_blurbs">With his Masters in Computer Science and a Bachelors in Math, Mr. Stubblefield has been teaching AP Computer Science Principles at Troy for 2 years, but he is best known as Commander because he was the Senior Naval Science Instructor of the NJROTC program before switching to becoming a Computer Science teacher. As of right now, he teaches AP Computer Science Principles, and he welcomes incoming freshmen and expects them to be confident in their abilities. He is also the advisor of Troy’s Cyber Defense Team.</p>
+      </div>	
     </div>
     <!-- Lightbox -->
     <div id="lightbox">
@@ -432,8 +467,13 @@
 		function showClassroom(n) {
 			document.getElementById("classroom_container").style.display = "block";
 			var classrooms = document.getElementsByClassName("classrooms");
-			for(i = 0; i < NUMINFO; i++) {classrooms[i].style.display = "none";}
+			var cblurbs = document.getElementsByClassName("cblurbs_container");
+			for(i = 0; i < NUMINFO; i++) {
+				classrooms[i].style.display = "none";
+				cblurbs[i].style.display = "none";
+			}
 			classrooms[n].style.display = "block";
+			cblurbs[n].style.display = "block";
 		}
 		function disappear() {
 			document.getElementById("classroom_container").style.display = "none";
