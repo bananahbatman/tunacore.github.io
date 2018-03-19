@@ -43,23 +43,29 @@
 		#classroom_container {
 			display: none;
 			position: absolute;
-			width: 1280px;
-			height: 720px;
-			margin-left: 16.6667%;
-			margin-top: 75px;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
 			z-index: 4;
 		}
 		.classrooms {
 			display: none;
+			position: relative;
+			width: 80%;
+			max-width: 1280px;
+			margin: auto;
+			margin-top: 4%;
 		}
 		.cblurbs_container {
 			display: none;
-			width: 1280px;
-			height 100px;
+			width: 80%;
+			max-width: 1280px;
 			background-color: rgb(29, 29, 29);
+			margin: auto;
 		}
 		.classroom_blurbs {
-			width: 1220px;
+			width: 97%;
+			max-width: 1220px;
 			margin: auto;
 			padding: 10px;
 		}
@@ -78,6 +84,7 @@
 			float: right;
 			top: 50px;
 			right: 50px;
+			z-index: 4;
 		}
 		/* Header */
 		#header {
@@ -241,10 +248,6 @@
       <div class ="cblurbs_container">
         <p class ="classroom_blurbs">With a Bachelors of Science and a Masters in Mathematics, Mr. Rogers has been enthusiastically teaching Algebra II Honors at Troy for the last 18 years. He holds high expectations of the students at Troy and strives to imbue his students with all the knowledge they would need. Mr. Rogers spends his free time with sports, camping, and family.</p>
       </div>
-      <img class="classrooms" src="images/classrooms/milord.jpg"/>
-      <div class ="cblurbs_container">
-        <p class ="classroom_blurbs">For 15 years, Mrs. Milord has been zealously teaching Geometry Honors and higher level math for the last 15 years. As a teacher to incoming freshmen, Mrs. Milord strives to build a sturdy foundation for math that students use over their time at Troy. During her free time, Mrs. Milord unwinds by reading books and gardening.</p>
-      </div>
       <img class="classrooms" src="images/classrooms/romero.jpg"/>
       <div class ="cblurbs_container">
         <p class ="classroom_blurbs">With a Masters in Education, Mrs. Romero has been teaching Spanish at Troy for 13 years. Mrs. Romero expects students to be positive, assertive, open to new concepts, and able to follow instructions. Mrs. Romero spends her free time teaching yoga, helping the homeless, and cleaning beaches.</p>
@@ -293,26 +296,23 @@
           <p class="info bt" onClick="showClassroom(1);toggleLightbox();">View Mr. Rogers's Classroom</p>
 		</div>
         <div class="info_container">
-          <p class="info bt" onClick="showClassroom(2);toggleLightbox();">View Mrs. Milord's Classroom</p>
-		</div>
-        <div class="info_container">
-          <p class="info bt" onClick="showClassroom(3);toggleLightbox();">View Mrs. Romero's Classroom</p>
+          <p class="info bt" onClick="showClassroom(2);toggleLightbox();">View Mrs. Romero's Classroom</p>
 		</div>
         <p class="blurbs">The 400 Building is the main hub for elective and tech courses offered at Troy. Here, students are often seen participating in programs such as ROTC, Band, Choir, and Art. Additionally, AP Computer Science Principles, AP Computer Science A, and Computer Science IBSL are taught here.</p>
         <p class="blurbs">The 500 Building is the history building at Troy. In this building, students take classes such as World History, European History, American History. There is a variety of furniture placed in the extremely spacious hallways for students to relax in before classes. Also, many student artworks are hung up on the walls of the hallways for students to enjoy.</p>
         <div class="info_container">
-          <p class="info bt" onClick="showClassroom(4);toggleLightbox();">View Mr. Shirota's Classroom</p>
+          <p class="info bt" onClick="showClassroom(3);toggleLightbox();">View Mr. Shirota's Classroom</p>
 		</div>
         <p class="blurbs">The 900 Building is all about science. In this building, students can learn subjects such as Biology, Chemistry, Physics, Anatomy, and more. This building is usually accessed through the breezeway, which is located between the 400 and 500 buildings. This is also where Troy’s renowned Science Olympiad team practices after school.</p>
         <div class="info_container">
-          <p class="info bt" onClick="showClassroom(5);toggleLightbox();">View Mrs. Ngo's Classroom</p>
+          <p class="info bt" onClick="showClassroom(4);toggleLightbox();">View Mrs. Ngo's Classroom</p>
 		</div>
         <div class="info_container">
-          <p class="info bt" onClick="showClassroom(6);toggleLightbox();">View Mr. Gower's Classroom</p>
+          <p class="info bt" onClick="showClassroom(5);toggleLightbox();">View Mr. Gower's Classroom</p>
 		</div>
         <p class="blurbs">The 1000 Buildings are usually viewed as extra classrooms used by Cyber Security and Business classes. One of the buildings has two powerful computer labs, which is where Troy’s Cyber Security team practices.</p>
         <div class="info_container">
-          <p class="info bt" onClick="showClassroom(7);toggleLightbox();">View Mr. Stubblefield's Classroom</p>
+          <p class="info bt" onClick="showClassroom(6);toggleLightbox();">View Mr. Stubblefield's Classroom</p>
 		</div>
       </div>
       <!-- Tour and site pictures -->
@@ -370,7 +370,7 @@
     <!-- Tour mechanism -->
     <script>
 		var NUMSLIDES = 7;
-		var NUMINFO = 8;
+		var NUMINFO = 7;
 		var slideIndex = 1;
 		var mapVisible = false;
 		var lightboxVisible = false;
@@ -416,17 +416,16 @@
 			if (slideIndex === 3) {
 				info[1].style.display = "block";
 				info[2].style.display = "block";
-				info[3].style.display = "block";
 			}
 			if (slideIndex === 5) {
-				info[4].style.display = "block";
+				info[3].style.display = "block";
 			}
 			if (slideIndex === 6) {
+				info[4].style.display = "block";
 				info[5].style.display = "block";
-				info[6].style.display = "block";
 			}
 			if (slideIndex === 7) {
-				info[7].style.display = "block";
+				info[6].style.display = "block";
 			}
 			for(i = 0; i < NUMSLIDES; i++) {
 				slides[i].style.display = "none";
