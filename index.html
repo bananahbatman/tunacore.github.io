@@ -304,6 +304,9 @@
       <img class="expandedMaps" src="images/maps_expand/500.jpg"/>
       <img class="expandedMaps" src="images/maps_expand/900.jpg"/>
       <img class="expandedMaps" src="images/maps_expand/1000.jpg"/>
+      <img class="expandedMaps" src="images/maps_expand/1000.jpg"/>
+      <img class="expandedMaps" src="images/maps_expand/Admin.jpg"/>
+      <img class="expandedMaps" src="images/maps_expand/NorthGym.jpg"/>
     </div>
     <div id="expandedSite_container" class="popup">
       <img class="expandedSites" src="images/site_expand/site_1.jpg"/>
@@ -313,6 +316,8 @@
       <img class="expandedSites" src="images/site_expand/site_5.jpg"/>
       <img class="expandedSites" src="images/site_expand/site_6.jpg"/>
       <img class="expandedSites" src="images/site_expand/site_7.jpg"/>
+      <img class="expandedSites" src="images/site_expand/site_8.jpg"/>
+      <img class="expandedSites" src="images/site_expand/site_9.jpg"/>
 	</div>
     <!-- Lightbox -->
     <div id="lightbox">
@@ -332,6 +337,8 @@
         <h1 class="site_titles">500 Building</h1>
         <h1 class="site_titles">900 Building</h1>
         <h1 class="site_titles">1000 Building</h1>
+	<h1 class="site_titles">Administrator Building</h1>
+	<h1 class="site_titles">North Gym</h1>
         <p class="blurbs">The Quad is a central area for students to make their way to their classes every day. Additionally, many school events and club fundraisers are held here because it is spacious and easily accessible.</p>
         <p class="blurbs">The 200 Building is mostly known for its Library. Here, students can study in silence and borrow from a wide array of books. The library also has many computers as well as a few printers for students to use. However,  the 200 Building also includes the Lecture hall and one English classroom.</p>
         <div class="info_container">
@@ -360,6 +367,8 @@
         <div class="info_container">
           <p class="info bt" onClick="showClassroom(6);toggleLightbox();">View Mr. Stubblefield's Classroom</p>
 		</div>
+	      <p class="blurbs"> The Adminstrator office is where you can meet counselors, adminstrators, and coordinators. They are very hospitable and always happy to help.</p>
+	      <p class="blurbs"> The North Gym is the location for rallies that the whole school attends. You see performances from the likes of cheer, dance, sports, ASB, Band, and NJROTC. Additionally, Other events are hosted like basketball games or concerts. </p>
       </div>
       <!-- Tour and site pictures -->
       <div id="tour_container">
@@ -373,6 +382,8 @@
 	    <img class="showcase" src="images/site_main/site_5.jpg"/>
 	    <img class="showcase" src="images/site_main/site_6.jpg"/>
 	    <img class="showcase" src="images/site_main/site_7.jpg"/>
+	    <img class="showcase" src="images/site_main/site_8.jpg"/>
+	    <img class="showcase" src="images/site_main/site_9.jpg"/>
 	    <p id="prev" class="bt" onclick="plusSlides(-1)">&#10094;</p>
 	    <p id="next" class="bt" onclick="plusSlides(1)">&#10095;</p>
 	    <div id="map_container">
@@ -389,6 +400,8 @@
           <img class="map" src="images/maps/500.jpg"/>
           <img class="map" src="images/maps/900.jpg"/>
           <img class="map" src="images/maps/1000.jpg"/>
+          <img class="expandedMaps" src="images/maps_expand/Admin.jpg"/>
+          <img class="expandedMaps" src="images/maps_expand/NorthGym.jpg"/>
         </div>
       </div>
       <!-- Bottom tour navigation -->
@@ -417,16 +430,24 @@
           <div class="site_num">6</div>
           <img src="images/site_preview/site_6.jpg" onclick="currentSlide(6)"/>
 	    </div>
-	    <div class="preview" id="last">
+	      <div class="preview">
           <div class="site_num">7</div>
           <img src="images/site_preview/site_7.jpg" onclick="currentSlide(7)"/>
+	    </div>
+	      <div class="preview">
+          <div class="site_num">8</div>
+          <img src="images/site_preview/site_8.jpg" onclick="currentSlide(8)"/>
+	    </div>
+	    <div class="preview" id="last">
+          <div class="site_num">9</div>
+          <img src="images/site_preview/site_9.jpg" onclick="currentSlide(9)"/>
 	    </div>
       </div>
 	</div>
     <!-- Tour mechanism -->
     <script>
-		var NUMSLIDES = 7;
-		var NUMINFO = 7;
+		var NUMSLIDES = 9;
+		var NUMINFO = 9;
 		var slideIndex = 1;
 		var mapVisible = false;
 		var lightboxVisible = false;
